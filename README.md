@@ -37,18 +37,18 @@ import (
 )
 
 type Order struct {
-		ProductName string `json:"product_name"`
-		Amount      int    `json:"amount_paid"`
-		Paid        bool   `json:"paid"`
+    ProductName string `json:"product_name"`
+    Amount      int    `json:"amount_paid"`
+    Paid        bool   `json:"paid"`
 }
 
 func main() {
     roles := rbac.FromFile("/tmp/roles.yaml")
-	  canRead := rbac.With(roles).HasPermission(rbac.READ, "order")
+    canRead := rbac.With(roles).HasPermission(rbac.READ, "order")
     if !canRead {
         log.Fatalf("You do not have permission to read orders")
     }
-	  canUpdate := rbac.With(roles).HasPermission(rbac.UPDATE, "order")
+    canUpdate := rbac.With(roles).HasPermission(rbac.UPDATE, "order")
     if !canUpdate {
         log.Fatalf("You do not have permission to update orders")
     }
