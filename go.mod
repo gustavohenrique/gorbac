@@ -1,4 +1,4 @@
-module gorbac
+module github.com/gustavohenrique/gorbac
 
 go 1.15
 

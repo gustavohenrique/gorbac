@@ -57,6 +57,11 @@ func With(roles []Role) *Rbac {
 	return &Rbac{roles}
 }
 
+func WithJSON(str string) *Rbac {
+	roles, _ := FromJSON(str)
+	return &Rbac{roles}
+}
+
 func (r *Rbac) HasPermission(action Action, target string) bool {
 	for _, role := range r.roles {
 		for _, permission := range role.Permissions {

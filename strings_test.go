@@ -3,8 +3,8 @@ package gorbac_test
 import (
 	"testing"
 
-	rbac "gorbac"
-	"gorbac/test/assert"
+	rbac "github.com/gustavohenrique/gorbac"
+	"github.com/gustavohenrique/gorbac/test/assert"
 )
 
 func TestFromJSON(t *testing.T) {
